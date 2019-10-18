@@ -1,4 +1,4 @@
-# サンプル（プロダクト名）
+# 子供向け危険予知アプリ
 
 [![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
