@@ -10,15 +10,25 @@ import UIKit
 import AVFoundation
 import Vision
 
-class ViewController: UIViewController {
+//  画面遷移先を判断するグローバル変数
 
+
+class ViewController: UIViewController {
+    
+    // 判定結果を格納する変数
+    var judgeResult = ""
+    // 正解数をカウントする変数
+    var trueCount = 0
+    // 不正解の数をカウントする変数
+    var falseCount = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         startCapture()
     }
-
+    
     // カメラキャプチャの開始
     private func startCapture() {
         let captureSession = AVCaptureSession()
@@ -53,7 +63,7 @@ class ViewController: UIViewController {
         // キャプチャ開始
         captureSession.startRunning()
     }
-
+    
 }
 
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -76,10 +86,43 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             // 判別結果とその確信度を上位3件まで表示
             // identifierは類義語がカンマ区切りで複数書かれていることがあるので、最初の単語のみ取得する
-            let displayText = results.prefix(1).compactMap { "\(Int($0.confidence * 100))% \($0.identifier.components(separatedBy: ", ")[0])" }.joined(separator: "\n")
+            self!.judgeResult = results.prefix(1).compactMap { "\(Int($0.confidence * 100))% \($0.identifier.components(separatedBy: ", ")[0])" }.joined(separator: "\n")
             
-            DispatchQueue.main.async {
-                print(displayText)
+            DispatchQueue.main.async() {
+                judgeMethod()
+            }
+        }
+        
+        // 正解，不正解を判断するメソッド
+        func judgeMethod() {
+            // コンロを認識しているかを判断する
+            if judgeResult.contains("Stove") {
+                falseCount = 0
+                trueCount += 1
+                if trueCount <= 30 {
+                    // 画面遷移
+                    print("30以上になりました")
+                }
+                
+                // 机の角を認識しているかを判断する
+            } else if judgeResult.contains("Corner") {
+                falseCount = 0
+                trueCount += 1
+                if trueCount <= 30 {
+                    // 画面遷移
+                    print("30以上になりました")
+                }
+                
+                // それら以外を認識しているかを判断する
+            } else {
+                falseCount += 1
+                
+                // 10回連続で”Stove”or"Corner"意外だった場合にtrueCountを初期化する
+                if falseCount <= 10 {
+                    trueCount = 0
+                    print("trueCountを初期化しました")
+                    
+                }
             }
         }
         
