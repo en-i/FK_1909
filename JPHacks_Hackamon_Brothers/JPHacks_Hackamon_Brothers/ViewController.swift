@@ -15,6 +15,8 @@ import Vision
 
 class ViewController: UIViewController {
     
+    // var notification_with_tool = NotificationWithTool()
+    
     // 判定結果を格納する変数
     var judgeResult = ""
     // コンロの正解数をカウントする変数
@@ -103,9 +105,9 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 //falseCount = 0
                 trueDeskCount = 0
                 trueStoveCount += 1
-                if trueStoveCount >= 50 {
+                if trueStoveCount >= 40 {
                     // 画面遷移
-                    print("コンロが50以上になりました")
+                    print("コンロが40以上になりました")
                 }
                 
                 // 机の角を認識しているかを判断する
@@ -113,15 +115,16 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 //falseCount = 0
                 trueStoveCount = 0
                 trueDeskCount += 1
-                if trueDeskCount >= 50 {
+                if trueDeskCount >= 40 {
                     // 画面遷移
-                    print("机が50以上になりました")
+                    print("机が40以上になりました")
                 }
                 
                 // それら以外を認識しているかを判断する
             } else {
-                // 10回連続で”Stove”or"Corner"意外だった場合にtrueCountを初期化する
-                if falseCount >= 20 {
+                falseCount += 1
+                // 15回連続で”Stove”or"Corner"意外だった場合にtrueCountを初期化する
+                if falseCount >= 15 {
                     trueStoveCount = 0
                     trueDeskCount = 0
                     print("trueCountを初期化しました")

@@ -14,6 +14,7 @@
 		39E88CE1235ACCEF007FC7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CDF235ACCEF007FC7B0 /* Main.storyboard */; };
 		39E88CE3235ACCF0007FC7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */; };
 		39E88CE6235ACCF0007FC7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CE4235ACCF0007FC7B0 /* LaunchScreen.storyboard */; };
+		84B4E4EC235AF90A0068BA6C /* NotificationWithTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4E4EB235AF90A0068BA6C /* NotificationWithTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E88CE5235ACCF0007FC7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39E88CE7235ACCF0007FC7B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B4E4EB235AF90A0068BA6C /* NotificationWithTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWithTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				393CC5FA235ADD26002D4E2E /* SqueezeNet.mlmodel */,
 				391E5A6D235B0FC60045F1BC /* SampleModel.mlmodel */,
 				39E88CDD235ACCEF007FC7B0 /* ViewController.swift */,
+				84B4E4EB235AF90A0068BA6C /* NotificationWithTool.swift */,
 				39E88CDF235ACCEF007FC7B0 /* Main.storyboard */,
 				39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */,
 				39E88CE4235ACCF0007FC7B0 /* LaunchScreen.storyboard */,
@@ -143,7 +146,11 @@
 			files = (
 				39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */,
 				393CC5FB235ADD26002D4E2E /* SqueezeNet.mlmodel in Sources */,
+<<<<<<< HEAD
 				391E5A6E235B0FC60045F1BC /* SampleModel.mlmodel in Sources */,
+=======
+				84B4E4EC235AF90A0068BA6C /* NotificationWithTool.swift in Sources */,
+>>>>>>> 67a28ef958cbad12770aa0b1e02b89bdd1e07c2b
 				39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
