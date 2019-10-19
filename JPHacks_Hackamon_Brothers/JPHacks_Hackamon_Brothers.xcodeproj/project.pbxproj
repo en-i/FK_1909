@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		39E88CE1235ACCEF007FC7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CDF235ACCEF007FC7B0 /* Main.storyboard */; };
 		39E88CE3235ACCF0007FC7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */; };
 		39E88CE6235ACCF0007FC7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CE4235ACCF0007FC7B0 /* LaunchScreen.storyboard */; };
+		39E88CEE235AD28B007FC7B0 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 39E88CED235AD28B007FC7B0 /* SqueezeNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E88CE5235ACCF0007FC7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39E88CE7235ACCF0007FC7B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39E88CED235AD28B007FC7B0 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../SqueezeNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */,
 				39E88CDD235ACCEF007FC7B0 /* ViewController.swift */,
+				39E88CED235AD28B007FC7B0 /* SqueezeNet.mlmodel */,
 				39E88CDF235ACCEF007FC7B0 /* Main.storyboard */,
 				39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */,
 				39E88CE4235ACCF0007FC7B0 /* LaunchScreen.storyboard */,
@@ -100,7 +103,7 @@
 				};
 			};
 			buildConfigurationList = 39E88CD3235ACCEF007FC7B0 /* Build configuration list for PBXProject "JPHacks_Hackamon_Brothers" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */,
+				39E88CEE235AD28B007FC7B0 /* SqueezeNet.mlmodel in Sources */,
 				39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYBV5SV6TY;
 				INFOPLIST_FILE = JPHacks_Hackamon_Brothers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYBV5SV6TY;
 				INFOPLIST_FILE = JPHacks_Hackamon_Brothers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
