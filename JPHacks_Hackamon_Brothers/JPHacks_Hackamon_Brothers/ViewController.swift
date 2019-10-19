@@ -15,6 +15,8 @@ import Vision
 
 class ViewController: UIViewController {
     
+    var notification_with_tool = NotificationWithTool()
+    
     // 判定結果を格納する変数
     var judgeResult = ""
     // 正解数をカウントする変数
