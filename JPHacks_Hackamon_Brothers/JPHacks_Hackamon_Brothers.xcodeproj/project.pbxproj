@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391E5A6E235B0FC60045F1BC /* SampleModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 391E5A6D235B0FC60045F1BC /* SampleModel.mlmodel */; };
 		393CC5FB235ADD26002D4E2E /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 393CC5FA235ADD26002D4E2E /* SqueezeNet.mlmodel */; };
 		39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */; };
 		39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E88CDD235ACCEF007FC7B0 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		391E5A6D235B0FC60045F1BC /* SampleModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SampleModel.mlmodel; path = ../../../SampleModel.mlmodel; sourceTree = "<group>"; };
 		393CC5FA235ADD26002D4E2E /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		39E88CD8235ACCEF007FC7B0 /* JPHacks_Hackamon_Brothers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPHacks_Hackamon_Brothers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */,
 				393CC5FA235ADD26002D4E2E /* SqueezeNet.mlmodel */,
+				391E5A6D235B0FC60045F1BC /* SampleModel.mlmodel */,
 				39E88CDD235ACCEF007FC7B0 /* ViewController.swift */,
 				39E88CDF235ACCEF007FC7B0 /* Main.storyboard */,
 				39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */,
 				393CC5FB235ADD26002D4E2E /* SqueezeNet.mlmodel in Sources */,
+				391E5A6E235B0FC60045F1BC /* SampleModel.mlmodel in Sources */,
 				39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

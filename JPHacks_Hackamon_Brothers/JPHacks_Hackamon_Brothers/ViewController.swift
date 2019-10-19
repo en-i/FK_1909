@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     
     // 判定結果を格納する変数
     var judgeResult = ""
-    // 正解数をカウントする変数
-    var trueCount = 0
+    // コンロの正解数をカウントする変数
+    var trueStoveCount = 0
+    // 机の正解数をカウントする変数
+    var trueDeskCount = 0
     // 不正解の数をカウントする変数
     var falseCount = 0
     
@@ -75,7 +77,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         // CoreMLのモデルクラスの初期化
-        guard let model = try? VNCoreMLModel(for: SqueezeNet().model) else {
+        guard let model = try? VNCoreMLModel(for: SampleModel().model) else {
             assertionFailure("Error: CoreMLモデルの初期化に失敗しました")
             return
         }
@@ -90,6 +92,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             DispatchQueue.main.async() {
                 judgeMethod()
+                print(self!.judgeResult)
             }
         }
         
@@ -97,29 +100,30 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         func judgeMethod() {
             // コンロを認識しているかを判断する
             if judgeResult.contains("Stove") {
-                falseCount = 0
-                trueCount += 1
-                if trueCount <= 30 {
+                //falseCount = 0
+                trueDeskCount = 0
+                trueStoveCount += 1
+                if trueStoveCount >= 50 {
                     // 画面遷移
-                    print("30以上になりました")
+                    print("コンロが50以上になりました")
                 }
                 
                 // 机の角を認識しているかを判断する
             } else if judgeResult.contains("Corner") {
-                falseCount = 0
-                trueCount += 1
-                if trueCount <= 30 {
+                //falseCount = 0
+                trueStoveCount = 0
+                trueDeskCount += 1
+                if trueDeskCount >= 50 {
                     // 画面遷移
-                    print("30以上になりました")
+                    print("机が50以上になりました")
                 }
                 
                 // それら以外を認識しているかを判断する
             } else {
-                falseCount += 1
-                
                 // 10回連続で”Stove”or"Corner"意外だった場合にtrueCountを初期化する
-                if falseCount <= 10 {
-                    trueCount = 0
+                if falseCount >= 20 {
+                    trueStoveCount = 0
+                    trueDeskCount = 0
                     print("trueCountを初期化しました")
                     
                 }
