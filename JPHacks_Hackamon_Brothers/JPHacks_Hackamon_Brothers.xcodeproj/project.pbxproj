@@ -146,11 +146,8 @@
 			files = (
 				39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */,
 				393CC5FB235ADD26002D4E2E /* SqueezeNet.mlmodel in Sources */,
-<<<<<<< HEAD
 				391E5A6E235B0FC60045F1BC /* SampleModel.mlmodel in Sources */,
-=======
 				84B4E4EC235AF90A0068BA6C /* NotificationWithTool.swift in Sources */,
->>>>>>> 67a28ef958cbad12770aa0b1e02b89bdd1e07c2b
 				39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
