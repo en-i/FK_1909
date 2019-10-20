@@ -25,17 +25,51 @@ class ViewController: UIViewController {
     var trueDeskCount = 0
     // 不正解の数をカウントする変数
     var falseCount = 0
+    // キャラクターのコメントを入れる配列
+    var characterCommentArray = ["ぼくをさがしてね！","はやくみつけてよ〜！", "こっちこっち〜！","まだ〜？"]
+    // コメントに合ったキャラクターを管理する配列
+    var characterImageArray = ["happy_bear.png","surprise_bear.png","dance_bear2.png","sad_bear.png"]
     
+    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var visibleCharacterImage: UIImageView!
+    
+    // AVCaptureSessionをインスタンス化
+    let captureSession = AVCaptureSession()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        visibleCharacterImage.isHidden = true
+        nowView = 1
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(ViewController.timeUpdate), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
         startCapture()
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        performSegue(withIdentifier: "toHomeViewController", sender: nowView = 0)
+        captureSession.stopRunning()
+    }
+    
+    // 出現したキャラクターのタッチイベント
+    @IBAction func characterTapEvent(_ sender: Any) {
+        if trueStoveCount >= 40 {
+            performSegue(withIdentifier: "toDetailViewController", sender: currentJudge = "Stove")
+        } else if trueDeskCount >= 40 {
+            performSegue(withIdentifier: "toDetailViewController", sender: currentJudge = "Desk")
+        }
+    }
+    
+    // キャラクターコメントを指定するメソッド
+    @objc func timeUpdate() {
+        // ランダムでキャラクターのコメントを出すための配列番号を管理する変数
+        let commentManager = Int.random(in: 0...3)
+        characterImage.image = UIImage(named: characterImageArray[commentManager])
+        commentLabel.text = characterCommentArray[commentManager]
+    }
+    
     // カメラキャプチャの開始
     private func startCapture() {
-        let captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
         
         // 入力の指定
@@ -65,6 +99,7 @@ class ViewController: UIViewController {
         view.layer.insertSublayer(previewLayer, at: 0)
         
         // キャプチャ開始
+        
         captureSession.startRunning()
     }
     
@@ -79,7 +114,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         // CoreMLのモデルクラスの初期化
-        guard let model = try? VNCoreMLModel(for: SampleModel().model) else {
+        guard let model = try? VNCoreMLModel(for: ImageClassifier().model) else {
             assertionFailure("Error: CoreMLモデルの初期化に失敗しました")
             return
         }
@@ -106,7 +141,8 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 trueDeskCount = 0
                 trueStoveCount += 1
                 if trueStoveCount >= 40 {
-                    // 画面遷移
+                    // キャラクターを出す
+                    visibleCharacterImage.isHidden = false
                     print("コンロが40以上になりました")
                 }
                 
@@ -116,7 +152,8 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 trueStoveCount = 0
                 trueDeskCount += 1
                 if trueDeskCount >= 40 {
-                    // 画面遷移
+                    // キャラクターを出す
+                    visibleCharacterImage.isHidden = false
                     print("机が40以上になりました")
                 }
                 
@@ -125,6 +162,8 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 falseCount += 1
                 // 15回連続で”Stove”or"Corner"意外だった場合にtrueCountを初期化する
                 if falseCount >= 15 {
+                    // キャラクターを隠す
+                    visibleCharacterImage.isHidden = true
                     trueStoveCount = 0
                     trueDeskCount = 0
                     print("trueCountを初期化しました")
