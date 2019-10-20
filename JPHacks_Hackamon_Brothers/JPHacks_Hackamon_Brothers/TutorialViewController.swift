@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TutorialViewController: UIViewController {
     //pageLabelのための変数
    var pageNumber = 0

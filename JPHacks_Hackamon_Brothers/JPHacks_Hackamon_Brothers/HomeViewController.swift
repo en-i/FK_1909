@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 // 現在のViewを管理するグルーバル変数
 var nowView = 0
 
