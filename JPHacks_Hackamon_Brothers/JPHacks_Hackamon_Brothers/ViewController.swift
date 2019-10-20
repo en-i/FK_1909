@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var visibleCharacterImage: UIImageView!
+    @IBOutlet weak var visibleCharacterImage: UIButton!
     
     // AVCaptureSessionをインスタンス化
     let captureSession = AVCaptureSession()
@@ -53,10 +53,11 @@ class ViewController: UIViewController {
     
     // 出現したキャラクターのタッチイベント
     @IBAction func characterTapEvent(_ sender: Any) {
+        captureSession.stopRunning()
         if trueStoveCount >= 40 {
-            performSegue(withIdentifier: "toDetailViewController", sender: currentJudge = "Stove")
+            performSegue(withIdentifier: "toDetailViewController", sender: currentJudge = 0)
         } else if trueDeskCount >= 40 {
-            performSegue(withIdentifier: "toDetailViewController", sender: currentJudge = "Desk")
+            performSegue(withIdentifier: "toDetailViewController", sender: currentJudge = 1)
         }
     }
     
@@ -147,7 +148,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
                 
                 // 机の角を認識しているかを判断する
-            } else if judgeResult.contains("Corner") {
+            } else if judgeResult.contains("Desk") {
                 //falseCount = 0
                 trueStoveCount = 0
                 trueDeskCount += 1
@@ -161,7 +162,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             } else {
                 falseCount += 1
                 // 15回連続で”Stove”or"Corner"意外だった場合にtrueCountを初期化する
-                if falseCount >= 15 {
+                if falseCount >= 30 {
                     // キャラクターを隠す
                     visibleCharacterImage.isHidden = true
                     trueStoveCount = 0

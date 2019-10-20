@@ -28,7 +28,10 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var tutorialScroll: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
 
-   
+    @IBAction func tapAction(_ sender: Any) {
+        performSegue(withIdentifier: "finTutorial", sender: nil)
+    }
+    
     
     /*
      // MARK: - Navigation
