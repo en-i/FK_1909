@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		391E5A70235B49480045F1BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E5A6F235B49480045F1BC /* HomeViewController.swift */; };
 		391E5A72235B4F640045F1BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E5A71235B4F640045F1BC /* DetailViewController.swift */; };
-		391E5A74235B77100045F1BC /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 391E5A73235B77100045F1BC /* ImageClassifier.mlmodel */; };
 		391E5A77235C2C8F0045F1BC /* 11767.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391E5A75235C2C8E0045F1BC /* 11767.mp3 */; };
 		391E5A78235C2C8F0045F1BC /* by_chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391E5A76235C2C8E0045F1BC /* by_chance.mp3 */; };
+		39C9B8A0235CA07A00D33071 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 39C9B89F235CA07A00D33071 /* ImageClassifier.mlmodel */; };
 		39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */; };
-		39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E88CDD235ACCEF007FC7B0 /* ViewController.swift */; };
 		39E88CE1235ACCEF007FC7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CDF235ACCEF007FC7B0 /* Main.storyboard */; };
 		39E88CE3235ACCF0007FC7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */; };
 		39E88CE6235ACCF0007FC7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E88CE4235ACCF0007FC7B0 /* LaunchScreen.storyboard */; };
@@ -25,13 +24,11 @@
 /* Begin PBXFileReference section */
 		391E5A6F235B49480045F1BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		391E5A71235B4F640045F1BC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		391E5A73235B77100045F1BC /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ImageClassifier.mlmodel; path = ../../../ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		391E5A75235C2C8E0045F1BC /* 11767.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 11767.mp3; path = ../../../11767.mp3; sourceTree = "<group>"; };
 		391E5A76235C2C8E0045F1BC /* by_chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = by_chance.mp3; path = ../../../by_chance.mp3; sourceTree = "<group>"; };
-		39DB9502235C9BCE00B86A1F /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
+		39C9B89F235CA07A00D33071 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ImageClassifier.mlmodel; path = ../../../../../.Trash/ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		39E88CD8235ACCEF007FC7B0 /* JPHacks_Hackamon_Brothers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPHacks_Hackamon_Brothers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39E88CDD235ACCEF007FC7B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39E88CE0235ACCEF007FC7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39E88CE2235ACCF0007FC7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E88CE5235ACCF0007FC7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +52,7 @@
 		39DB9501235C9BC000B86A1F /* model */ = {
 			isa = PBXGroup;
 			children = (
-				39DB9502235C9BCE00B86A1F /* ImageClassifier.mlmodel */,
+				39C9B89F235CA07A00D33071 /* ImageClassifier.mlmodel */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -80,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				39E88CDB235ACCEF007FC7B0 /* AppDelegate.swift */,
-				391E5A73235B77100045F1BC /* ImageClassifier.mlmodel */,
-				39E88CDD235ACCEF007FC7B0 /* ViewController.swift */,
 				84B4E4EB235AF90A0068BA6C /* NotificationWithTool.swift */,
 				DCDA9760235B884C008C3C9A /* TutorialViewController.swift */,
 				391E5A75235C2C8E0045F1BC /* 11767.mp3 */,
@@ -172,13 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E88CDE235ACCEF007FC7B0 /* ViewController.swift in Sources */,
 				84B4E4EC235AF90A0068BA6C /* NotificationWithTool.swift in Sources */,
+				39C9B8A0235CA07A00D33071 /* ImageClassifier.mlmodel in Sources */,
 				DCDA9761235B884C008C3C9A /* TutorialViewController.swift in Sources */,
 				39E88CDC235ACCEF007FC7B0 /* AppDelegate.swift in Sources */,
 				391E5A70235B49480045F1BC /* HomeViewController.swift in Sources */,
 				391E5A72235B4F640045F1BC /* DetailViewController.swift in Sources */,
-				391E5A74235B77100045F1BC /* ImageClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
