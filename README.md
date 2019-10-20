@@ -1,6 +1,6 @@
 # くまもり　〜子供向け危険予知アプリ〜
 
-[![Product Name](testpic.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](testpic.png)](https://youtu.be/2FSe0rttzAs)
 
 ## 製品概要
 ### 子育て X Tech
@@ -23,7 +23,6 @@
 
 #### 2. 物体検知
 
-#### 3. 
 
 ### 解決出来ること
 　このアプリを使用することで、子供たちは怪我をすることなく、楽しみながら身近に潜む危険を知ることができる。また、親も自分の目が届かないような状況でも、安心感を得ることができる。
