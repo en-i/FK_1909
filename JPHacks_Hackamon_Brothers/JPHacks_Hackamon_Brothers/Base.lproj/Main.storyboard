@@ -180,6 +180,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="vus-W0-Hbf"/>
     </inferredMetricsTieBreakers>
+    <scenes>
+        <scene>
             <point key="canvasLocation" x="714" y="869"/>
         </scene>
         <!--Tutorial View Controller-->
