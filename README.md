@@ -1,6 +1,6 @@
 # くまもり　〜子供向け危険予知アプリ〜
 
-[![Product Name](testpic.png)](https://youtu.be/2FSe0rttzAs)
+[![Product Name](スクリーンショット 2020-11-06 13.52.05.png)](https://youtu.be/2FSe0rttzAs)
 
 ## 製品概要
 ### 子育て X Tech
